@@ -33,5 +33,12 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.5</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>mang.util</groupId>
+			<artifactId>mang-util</artifactId>
+			<version>3.0</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -44,7 +44,7 @@ public class QuickStartGet2 {
     public static void main(String[] args) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         try {
-        	String url="http://127.0.0.1:8083/index/get?name=xx";
+//        	String url="http://127.0.0.1:8083/index/get?name=xx";
         	URI uri = new URIBuilder()
         			 .setScheme("http")
         			 .setHost("127.0.0.1:8083")

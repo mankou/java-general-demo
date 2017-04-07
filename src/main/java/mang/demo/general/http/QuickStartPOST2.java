@@ -1,33 +1,27 @@
 package mang.demo.general.http;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import org.apache.http.HttpEntity;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 /**
- * 从官网的quickStart改了下  用于练习post请求 该post请求可传String类型的字符串 因其controoler的写法是 @RequestParam String name,String value
+ * 从官网的quickStart改了下  用于练习post请求  注意其请求的controoler的参数写法不一样 @RequestBody String name
  * */
-public class QuickStartPOST {
+public class QuickStartPOST2 {
 
     public static void main(String[] args) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         try {
 
-            HttpPost httpPost = new HttpPost("http://127.0.0.1:8083/index/post.do");
-            List <NameValuePair> nvps = new ArrayList <NameValuePair>();
-            nvps.add(new BasicNameValuePair("name", "vip"));
-            httpPost.setEntity(new UrlEncodedFormEntity(nvps));
-            
+            HttpPost httpPost = new HttpPost("http://127.0.0.1:8083/index/post2.do");
+            StringEntity stringEntity=new StringEntity("name");
+            httpPost.setEntity(stringEntity);
             CloseableHttpResponse response2 = httpclient.execute(httpPost);
 
             try {
